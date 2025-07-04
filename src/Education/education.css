@@ -1,0 +1,118 @@
+.Edu_container {
+    display: flex;
+    gap: 30px;
+    padding: 70px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.15);
+    max-width: 70%;
+    margin: 50px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
+}
+
+.edu_head {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.box-one {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #282828;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.1);
+    padding: 20px 0;
+}
+
+.tab {
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #b0b0b0;
+    border-left: 5px solid transparent;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.tab:hover {
+    background-color: #3a3a3a;
+    border-left-color: #00bcd4;
+    color: #00bcd4;
+    padding-left: 30px;
+}
+
+.tab.active {
+    background-color: #00bcd4;
+    color: #1a1a1a;
+    border-left-color: #0097a7;
+    font-weight: bold;
+    box-shadow: inset 3px 0 10px rgba(0, 255, 255, 0.4);
+}
+
+.box-second {
+    flex: 2;
+    background-color: #282828;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.1);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    color: #e0e0e0;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .Edu_container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .box-one {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0;
+        border-radius: 10px;
+        overflow-x: auto;
+    }
+
+    .tab {
+        padding: 12px 15px;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        text-align: center;
+    }
+
+    .tab:hover {
+        border-left-color: transparent;
+        border-bottom-color: #00bcd4;
+        padding-left: 15px;
+    }
+
+    .tab.active {
+        border-left-color: transparent;
+        border-bottom-color: #0097a7;
+        box-shadow: inset 0 -3px 10px rgba(0, 255, 255, 0.4);
+    }
+
+    .box-second {
+        padding: 20px;
+        font-size: 1em;
+    }
+}

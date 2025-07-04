@@ -1,0 +1,315 @@
+/* about.css */
+
+.About_container {
+    display: flex;
+    justify-content: space-around;
+    /* Adjusting gap here - it might be too large on smaller screens initially */
+    gap: 40px;
+    padding: 40px;
+    background-color: #111;
+    color: #fff;
+    width: 80vw;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.about-text-letter {
+    font-size: 330px;
+    font-weight: 900;
+    color: #ff1f1f;
+    position: relative;
+    display: inline-block;
+    font-family: 'Arial Black', sans-serif;
+    transform: rotate(-15deg);
+    /* Adjusting margin here for better control */
+    margin-right: 50px; /* Keep some margin on the right when it's side-by-side */
+    margin-left: 0; /* Reset left margin */
+    transition: all 0.3s ease;
+}
+
+.about-text-letter::before {
+    content: 'S';
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    color: #00f9ff;
+    z-index: -1;
+}
+
+.about-text-letter:hover {
+    transform: rotate(-10deg) translateX(-30px) translateY(-10px);
+    cursor: pointer;
+}
+
+.About_content {
+    max-width: 600px;
+}
+
+.About_content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 10px;
+}
+
+.About_para {
+    line-height: 1.8;
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.about-info {
+    display: flex;
+    justify-content: space-between;
+    /* Adjusting gap here too */
+    gap: 40px;
+    padding: 20px;
+    border: 2px solid #00d1ff;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 209, 255, 0.2);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+.about-info:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 209, 255, 0.4);
+}
+
+.info-block {
+    flex: 1;
+    /* Reduced min-width slightly to allow more flexibility before wrapping */
+    min-width: 280px; /* Adjusted from 300px */
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.label {
+    font-weight: bold;
+    color: #00d1ff;
+}
+
+.value {
+    color: #fff;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 20px;
+    color: white;
+    height: 50px;
+    background: #27ae60;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: -50%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-65deg);
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+.btn:hover {
+    background: #2ecc71;
+    box-shadow: 0 8px 25px rgba(46, 204, 113, 0.7);
+}
+
+.btn:hover::before {
+    left: 150%;
+}
+
+.btn span {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media screen and (max-width: 1024px) {
+    .About_container {
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        gap: 20px; /* Reduced gap for vertical stacking */
+        padding: 30px;
+    }
+
+    .about-text-letter {
+        font-size: 250px;
+        margin: 20px 0; /* Center with vertical margin */
+        transform: rotate(0deg);
+    }
+
+    .about-text-letter::before {
+        left: 5px;
+        top: 5px;
+    }
+
+    .about-text-letter:hover {
+        transform: none;
+    }
+
+    .About_content {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .About_content h1 {
+        font-size: 28px;
+    }
+
+    .About_para {
+        font-size: 16px;
+    }
+
+    .about-info {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .info-block {
+        width: 100%;
+        font-size: 16px;
+        /* Ensure justify-content is space-between even when stacked for labels */
+        justify-content: space-between;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 18px;
+        margin: 15px auto; /* Center button horizontally */
+        display: block; /* Make button a block element to center with margin: auto */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .About_container {
+        padding: 20px;
+        margin: 20px auto;
+        width: 95vw;
+        gap: 15px; /* Further reduce gap */
+    }
+
+    .about-text-letter {
+        font-size: 180px;
+        margin: 10px 0;
+    }
+
+    .about-text-letter::before {
+        left: 4px;
+        top: 4px;
+    }
+
+    .About_content h1 {
+        font-size: 24px;
+    }
+
+    .About_para {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .about-info {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .info-block {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .About_container {
+        padding: 15px;
+        margin: 15px auto;
+        border-radius: 5px;
+        gap: 10px; /* Smallest gap */
+    }
+
+    .about-text-letter {
+        font-size: 120px;
+        margin: 5px 0;
+        margin-top: 8rem;
+    }
+
+    .about-text-letter::before {
+        left: 3px;
+        top: 3px;
+    }
+
+    .About_content h1 {
+        font-size: 20px;
+    }
+
+    .About_para {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .about-info {
+        padding: 10px;
+        gap: 8px;
+        width: 250px;
+    }
+
+    .info-block {
+        font-size: 14px;
+        flex-direction: column; /* Stack label and value */
+        align-items: flex-start; /* Align stacked items to the start */
+        gap: 2px; /* Small gap between stacked label/value */
+        padding-bottom: 5px; /* Add some space at the bottom of each info-block */
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.1); /* Subtle separator */
+    }
+    .info-block:last-child {
+        border-bottom: none; /* No border for the last one */
+    }
+
+
+    .btn {
+        padding: 8px 20px;
+        font-size: 14px;
+        margin: 10px auto;
+    }
+}
+
+/* Keyframe animations (kept as is) */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px #2d9da9;
+    }
+    to {
+        text-shadow: 0 0 30px #34b3c1, 20px 0 100px #4dbbc7;
+    }
+}

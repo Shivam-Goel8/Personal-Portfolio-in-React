@@ -1,0 +1,268 @@
+/* Overall container for the contact section */
+.contact-container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 30px 50px; /* Ample padding inside the container */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    width: 90%; /* Use percentage for fluid width */
+    max-width: 600px; /* Maximum width to prevent it from getting too wide on large screens */
+    margin: 100px auto; /* Center the container horizontally with top/bottom margin */
+    font-family: 'Inter', sans-serif; /* Consistent font */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Heading for the contact section */
+.contact_head {
+    color: #fff; /* White text for heading */
+    text-align: center; /* Center the heading */
+    margin-bottom: 30px; /* Space below the heading */
+    font-size: 2.5em; /* Large font size for prominence */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
+}
+
+/* Form layout */
+.contact-form {
+    display: flex; /* Use flexbox for form elements */
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 25px; /* Space between form groups */
+    /* Removed margin-right: 30px as it's not needed for a centered form */
+}
+
+/* Individual form group (input + label) */
+.form-group {
+    position: relative; /* Needed for positioning the label */
+}
+
+/* Styling for input and textarea fields */
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Full width of its parent */
+    padding: 15px; /* Padding inside the fields */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border: 2px solid transparent; /* Transparent border by default */
+    border-radius: 10px; /* Rounded corners for fields */
+    color: #fff; /* White text for input */
+    font-size: 16px; /* Standard font size */
+    transition: all 0.3s ease; /* Smooth transition for focus effects */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Specific height and disable resize for textarea */
+.form-group textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Focus state for input and textarea */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none; /* Remove default outline */
+    border-color: #00ff88; /* Green border on focus */
+    background: rgba(255, 255, 255, 0.15); /* Slightly less transparent background on focus */
+}
+
+/* Styling for labels */
+.form-group label {
+    position: absolute; /* Absolute positioning relative to form-group */
+    left: 15px; /* Initial left position */
+    top: 15px; /* Initial top position */
+    color: rgba(255, 255, 255, 0.6); /* Slightly transparent white for label */
+    pointer-events: none; /* Allow clicks to pass through to the input */
+    transition: all 0.3s ease; /* Smooth transition for label movement */
+}
+
+/* Label animation when input/textarea is focused or has content */
+.form-group input:focus~label,
+.form-group input:valid~label,
+.form-group textarea:focus~label,
+.form-group textarea:valid~label {
+    transform: translateY(-25px); /* Move label upwards */
+    font-size: 14px; /* Shrink label font size */
+    color: #00ff88; /* Change label color to green */
+}
+
+/* Submit button styling */
+button {
+    background: #00ff88; /* Green background */
+    color: #1e1e1e; /* Dark text for contrast */
+    padding: 15px 30px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transitions */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Spacing between letters */
+    align-self: center; /* Center the button within the flex container */
+    max-width: 250px; /* Limit button width */
+    width: 100%; /* Make it fluid up to max-width */
+}
+
+/* Button hover effect */
+button:hover {
+    background: #00cc6a; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift button slightly */
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3); /* Green glow on hover */
+}
+
+/* Social links container */
+.social-links {
+    margin-top: 30px; /* Space above social links */
+    display: flex; /* Use flexbox for social icons */
+    justify-content: center; /* Center the icons horizontally */
+    gap: 20px; /* Space between icons */
+}
+
+/* Individual social link icon */
+.social-links a {
+    color: rgba(255, 255, 255, 0.6); /* Semi-transparent white for icons */
+    font-size: 24px; /* Icon size */
+    transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Social link hover effect */
+.social-links a:hover {
+    color: #00ff88; /* Green on hover */
+    transform: translateY(-3px); /* Lift icon slightly */
+}
+
+/* Success message styling (initially hidden) */
+.success-message {
+    display: none; /* This class is overridden by popup-message when shown */
+    color: #00ff88;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Popup message for success notification */
+.popup-message {
+    background-color: #00ff88; /* Green background */
+    color: #1e1e1e; /* Dark text */
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    animation: fadeInOut 3s ease forwards; /* Animation for fading in and out */
+}
+
+/* Keyframe animation for the popup message */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 25px 30px; /* Reduce padding for tablets/smaller desktops */
+        margin: 50px auto; /* Adjust margin */
+    }
+
+    .contact_head {
+        font-size: 2em; /* Slightly smaller heading */
+        margin-bottom: 25px;
+    }
+
+    .contact-form {
+        gap: 20px; /* Slightly less gap between form elements */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px; /* Slightly less padding in inputs */
+        font-size: 15px; /* Slightly smaller font */
+    }
+
+    .form-group label {
+        top: 12px; /* Adjust label position */
+    }
+
+    .form-group input:focus~label,
+    .form-group input:valid~label,
+    .form-group textarea:focus~label,
+    .form-group textarea:valid~label {
+        transform: translateY(-22px); /* Adjust label movement */
+        font-size: 13px; /* Smaller label font */
+    }
+
+    button {
+        padding: 12px 25px; /* Smaller button padding */
+        font-size: 16px; /* Smaller button font */
+    }
+
+    .social-links {
+        margin-top: 25px;
+        gap: 15px; /* Smaller gap between social icons */
+    }
+
+    .social-links a {
+        font-size: 22px; /* Slightly smaller icons */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 20px; /* Further reduce padding for mobile */
+        margin: 30px auto; /* Adjust margin for mobile */
+        width: 95%; /* Take up more width on very small screens */
+    }
+
+    .contact_head {
+        font-size: 1.8em; /* Even smaller heading for mobile */
+        margin-bottom: 20px;
+    }
+
+    .contact-form {
+        gap: 18px; /* Smaller gap */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px; /* Minimal padding */
+        font-size: 14px; /* Smaller font for inputs */
+    }
+
+    .form-group label {
+        top: 10px; /* Adjust label position */
+        left: 10px; /* Adjust label position */
+    }
+
+    .form-group input:focus~label,
+    .form-group input:valid~label,
+    .form-group textarea:focus~label,
+    .form-group textarea:valid~label {
+        transform: translateY(-20px); /* Adjust label movement */
+        font-size: 12px; /* Smallest label font */
+    }
+
+    button {
+        padding: 10px 20px; /* Smallest button padding */
+        font-size: 15px; /* Smallest button font */
+    }
+
+    .social-links {
+        margin-top: 20px;
+        gap: 10px; /* Smallest gap between social icons */
+    }
+
+    .social-links a {
+        font-size: 20px; /* Smallest icons */
+    }
+}
