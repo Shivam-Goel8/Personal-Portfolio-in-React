@@ -251,6 +251,7 @@
     display: flex;
     justify-content: start;
     gap: 30px;
+    /* border: 2px solid #fff; */
 }
 
 .sociallinks a {
@@ -258,7 +259,6 @@
     color: rgba(255, 255, 255, 0.6);
     font-size: 34px;
     font-weight: 500;
-
     transition: all 0.3s ease;
 }
 
@@ -365,33 +365,46 @@
     }
 }
 
-/* home.css */
+@media (max-width: 500px) {
 
-/* ... (your existing CSS for nav_bar, home-container, etc.) ... */
+    .home-hi,
+    .home-name,
+    .home-animated {
+        font-size: 1.9rem;
+        font-weight: 600;
+    }
 
-/* Initial state for elements that will animate on scroll */
-/* These styles will be applied before the element enters the viewport */
-.animate-on-scroll {
-    opacity: 0;
-    /* Start invisible */
-    transform: translateY(30px);
-    /* Start slightly below its final position */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    /* Smooth transition duration */
+    .home-hi{
+        margin-top: 4rem;
+    }
+    .home-animated {
+        font-size: 1.5rem;
+        font-weight: 600;
+
+    }
+
+    .cv-button {
+        margin: 20px;
+    }
+    .sociallinks{
+        margin: auto;
+    }
 }
 
-/* State when the element is visible and animated */
-/* This class will be added by JavaScript when the element is in view */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
 .animate-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
-    /* Move to its original position */
 }
 
-/* Optional: Different animation for the left side (e.g., slide in from left) */
 .home-left.animate-on-scroll {
     transform: translateX(-80px);
-    /* Start further left */
 }
 
 .home-left.animate-on-scroll.is-visible {
